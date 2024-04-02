@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Fruta
+  - Enemy
+  - respawn
+  - Reset
+  - Llave
   layers:
   - Default
   - TransparentFX

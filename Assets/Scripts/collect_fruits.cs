@@ -7,6 +7,8 @@ public class collect_fruits : MonoBehaviour
     public int score = 0;
     private int totalFrutas = 4;
 
+   
+
     open_door doorController;
 
     private void Start()
@@ -23,7 +25,10 @@ public class collect_fruits : MonoBehaviour
             score++;
             UpdateScoreText();
         }
+
     }
+
+   
 
     private void UpdateScoreText()
     {
