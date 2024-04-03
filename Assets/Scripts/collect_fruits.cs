@@ -7,7 +7,9 @@ public class collect_fruits : MonoBehaviour
     public int score = 0;
     private int totalFrutas = 4;
 
-   
+
+
+
 
     open_door doorController;
 
@@ -15,6 +17,8 @@ public class collect_fruits : MonoBehaviour
     {
         scoreText.text = score + "/" + totalFrutas + " FRUTAS";
         doorController = FindObjectOfType<open_door>();
+
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -26,9 +30,10 @@ public class collect_fruits : MonoBehaviour
             UpdateScoreText();
         }
 
+
     }
 
-   
+
 
     private void UpdateScoreText()
     {
@@ -38,4 +43,6 @@ public class collect_fruits : MonoBehaviour
             doorController.OpenDoor();
         }
     }
+
 }
+

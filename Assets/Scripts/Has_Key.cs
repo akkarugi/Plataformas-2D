@@ -1,39 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class Has_Key : MonoBehaviour
 {
-    public Text scoreText;
-    public int score = 0;
-    private int totalLlaves = 1;
-    bool hasKey= false;
+    public Text scoreText2;
+    public int score2 = 0;
+    private int totalKey = 1;
 
-    open_door2 doorController;
-    void Start()
+    open_door doorController;
+
+    private void Start()
     {
-        scoreText.text = score + "/" + totalLlaves + " LLAVE";
-        doorController = FindObjectOfType<open_door2>();
+        scoreText2.text = score2 + "/" + totalKey + " LLAVE";
+        doorController = FindObjectOfType<open_door>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+
         if (other.CompareTag("Llave"))
         {
-            bool hasKey = true;
             Destroy(other.gameObject);
-            score++;
-            UpdateScoreText();
-            doorController.OpenDoor();
+            score2++;
+            UpdateScoreText2();
         }
 
     }
-    private void UpdateScoreText()
+    private void UpdateScoreText2()
     {
-        scoreText.text = score + "/" + totalLlaves + " LLAVE";
- 
+        scoreText2.text = score2 + "/" + totalKey + " FRUTAS";
+        if (score2 == totalKey && doorController != null)
+        {
+            doorController.OpenDoor();
+        }
     }
 
-  
 }
