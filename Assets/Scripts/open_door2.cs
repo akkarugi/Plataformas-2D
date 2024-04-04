@@ -19,7 +19,11 @@ public class open_door2 : MonoBehaviour
 
     public void OpenDoor()
     {
-        isOpen = true;
+        if (!isOpen) 
+        {
+            isOpen = true;
+            Debug.Log("Abriendo puerta");
+        }
     }
 
     void MoveDoor(Vector3 targetPosition)
