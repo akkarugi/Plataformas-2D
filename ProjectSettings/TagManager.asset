@@ -9,6 +9,7 @@ TagManager:
   - respawn
   - Reset
   - Llave
+  - Victory
   layers:
   - Default
   - TransparentFX

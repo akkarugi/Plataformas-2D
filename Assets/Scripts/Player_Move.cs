@@ -17,7 +17,6 @@ public class Player_Move : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        //Movimiento Horizontal
         if (Input.GetKey("d") || Input.GetKey("right"))
         {
             rb.velocity = new Vector2(runSpeed, rb.velocity.y);
@@ -27,12 +26,11 @@ public class Player_Move : MonoBehaviour
             rb.velocity = new Vector2(-runSpeed, rb.velocity.y);
         }
         else
-        { 
-            rb.velocity= new Vector2 (0,rb.velocity.y);
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
         }
 
-
-        if (Input.GetKey("space") && Check_Ground.isGrounded)
+        if ((Input.GetKey("space") || Input.GetKey("up")) && Check_Ground.isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
         }
