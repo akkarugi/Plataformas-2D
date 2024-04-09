@@ -1,54 +1,50 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class sword : MonoBehaviour
 {
-    private SpriteRenderer playerSpriteRenderer;
     private BoxCollider2D colllider2D;
-    public Animation animator;
+    public Animator animator;
     public GameObject swordParent;
+
+    public AnimationClip attackAnimation;
 
     void Start()
     {
-        swordParent.SetActive(false);
-        playerSpriteRenderer= transform.root.GetComponent<SpriteRenderer>();
-        colllider2D= GetComponent<BoxCollider2D>();
+        colllider2D = GetComponent<BoxCollider2D>();
     }
 
-   
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q) || Input.GetMouseButtonDown(0)){
-            attack();
-        }
-
-        if (playerSpriteRenderer.flipX == true)
+        if (Input.GetKeyDown(KeyCode.Q) || Input.GetMouseButtonDown(0))
         {
-            swordParent.transform.rotation = Quaternion.Euler(0,0,0);
+            Attack();
         }
-
     }
 
-    public void attack()
+    public void Attack()
     {
-        swordParent.SetActive(true);
-        animator.Play("Attack");
-        colllider2D.enabled = true;
-        Invoke("Disableattack", 0.5f);
-        swordParent.SetActive(false);
+        if (animator != null && attackAnimation != null)
+        {
+            animator.Play(attackAnimation.name);
+            colllider2D.enabled = true;
+            Invoke("DisableAttack", 0.5f);
+        }
+        else
+        {
+            Debug.LogError("Animator or attackAnimation is not assigned in the sword script!");
+        }
     }
 
-    private void Disableattack()
+    private void DisableAttack()
     {
-        colllider2D.enabled=false;
+        colllider2D.enabled = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.transform.root.gameObject.CompareTag("Enemy"))
         {
-         
+            Destroy(collision.transform.root.gameObject);
         }
     }
 }
