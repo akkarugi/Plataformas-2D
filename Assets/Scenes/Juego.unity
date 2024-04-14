@@ -4212,6 +4212,7 @@ GameObject:
   - component: {fileID: 544328472}
   - component: {fileID: 544328473}
   - component: {fileID: 544328474}
+  - component: {fileID: 544328475}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4467,6 +4468,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 161e0c0cca8dbc04b9541416a15abaf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &544328475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544328464}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45cb33becd8ac304788ccac99b115a4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpoint2: {fileID: 1744623813}
 --- !u!1 &549415178
 GameObject:
   m_ObjectHideFlags: 0
@@ -4798,7 +4812,7 @@ GameObject:
   - component: {fileID: 585924375}
   m_Layer: 0
   m_Name: NPC
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6240,7 +6254,7 @@ GameObject:
   - component: {fileID: 765600651}
   m_Layer: 0
   m_Name: NPC
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
