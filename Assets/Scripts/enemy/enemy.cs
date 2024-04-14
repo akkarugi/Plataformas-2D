@@ -13,8 +13,8 @@ public class Player : MonoBehaviour
     public Transform checkpoint1;
     public Transform checkpoint2;
 
-    public TextMeshProUGUI checkpointMessage1; // Primer mensaje de checkpoint
-    public TextMeshProUGUI checkpointMessage2; // Segundo mensaje de checkpoint
+    public TextMeshProUGUI checkpointMessage1;
+    public TextMeshProUGUI checkpointMessage2; 
 
     private int vidas = 3;
     private Vector3 respawnPosition;
