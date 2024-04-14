@@ -10,6 +10,13 @@ TagManager:
   - Reset
   - Llave
   - Victory
+  - FinalBoss
+  - Cabeza
+  - Pies
+  - Ground
+  - music
+  - Checkpoint1
+  - Checkpoint2
   layers:
   - Default
   - TransparentFX
