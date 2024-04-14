@@ -4,10 +4,14 @@ public class PasarAlNivel2 : MonoBehaviour
 {
     public Transform checkpoint2;
 
+    void Start()
+    {
+
+    }
+
     void Update()
     {
-       
-        if (Input.GetKey(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.T))
         {
             PasarAlNivel();
         }
